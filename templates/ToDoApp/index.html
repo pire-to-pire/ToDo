@@ -1,0 +1,26 @@
+{% extends "ToDoApp/base.html" %}
+{% block content %}
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Contenu</th>
+            <th scope="col">Valide</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for todo in todos %}
+            <tr>
+                <th scope="row">{{ todo.id }}</th>
+                <td>{{ todo.contenu }}</td>
+                {% if todo.valide %}
+                    <td><i class="fa-solid fa-circle-check"></i></td>
+                    {% else %}
+                    <td><i class="fa-solid fa-circle-xmark"></i></td>
+                    {% endif %}
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <a href="{% url "add" %}" type="button" class="btn btn-primary">Ajouter un ToDo</a>
+{% endblock %}

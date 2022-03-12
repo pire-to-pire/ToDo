@@ -1,0 +1,10 @@
+{% extends "ToDoApp/base.html" %}
+{% load django_bootstrap5 %}
+
+{% block content %}
+    <form method="POST" action="">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        <button type="submit" class="btn btn-primary">Ajouter a la liste</button>
+    </form>
+{% endblock %}
