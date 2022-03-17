@@ -6,6 +6,7 @@
             <th scope="col">#</th>
             <th scope="col">Contenu</th>
             <th scope="col">Valide</th>
+            <th scope="col">Favori</th>
         </tr>
         </thead>
         <tbody>
@@ -14,10 +15,15 @@
                 <th scope="row">{{ todo.id }}</th>
                 <td>{{ todo.contenu }}</td>
                 {% if todo.valide %}
-                    <td><i class="fa-solid fa-circle-check"></i></td>
-                    {% else %}
-                    <td><i class="fa-solid fa-circle-xmark"></i></td>
-                    {% endif %}
+                    <td><i class="fa-solid fa-circle-check" style="color: #66aa66"></i></td>
+                {% else %}
+                    <td><i class="fa-solid fa-circle-xmark" style="color: #e32636"></i></td>
+                {% endif %}
+                <!-- {% if todo.favori %}
+                    <td><i class="fa-solid fa-star" style="color: #ffd966"></i></td>
+                {% else %}
+                    <td><i class="fa-solid fa-star" style="color: #ffffff"></i></td>
+                {% endif %} -->
             </tr>
         {% endfor %}
         </tbody>

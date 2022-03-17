@@ -21,3 +21,9 @@ def add(request):
     else:
         form = forms.ToDoForm()
     return render(request, "ToDoApp/add.html", {"form": form})
+
+
+def fait(request):
+    todos = models.ToDo.objects.all()
+    todos.filter(valide=True)
+    return render(request, "ToDoApp/fait.html", {"todos": todos})

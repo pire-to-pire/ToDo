@@ -6,9 +6,12 @@ from django.db import models
 class ToDo(models.Model):
     contenu = models.TextField()
     valide = models.BooleanField(default=False)
+    #favori = models.BooleanField(default=False)
 
     def __str__(self):
+        nom = self.contenu
         if self.valide:
-            return f"[X] {self.contenu}"
+            nom = "[✔] " + nom
         else:
-            return f"[ ] {self.contenu}"
+            nom = "[X] " + nom
+        return nom
